@@ -4,43 +4,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
     <title>EsToDoList</title>
 </head>
 
 <body>
-    <header>
-        <figure>
-            <img src="#" alt="Logo EsToDoList">
-        </figure>
-        <h1>EsToDoList</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Tarefas</a>
-            <a href="#">Provas</a>
-            <a href="#">*VAZIO*</a>
-        </nav>
-        <label for="theme" class="theme"> <!-- BOTÃO DE TEMA -->
-            <span class="theme__toggle-wrap">
-                <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
-                <span class="theme__fill"></span>
-                <span class="theme__icon">
-                    <span class="theme__icon-part"></span>
-                    <span class="theme__icon-part"></span>
-                    <span class="theme__icon-part"></span>
-                    <span class="theme__icon-part"></span>
-                    <span class="theme__icon-part"></span>
-                    <span class="theme__icon-part"></span>
-                    <span class="theme__icon-part"></span>
-                    <span class="theme__icon-part"></span>
-                    <span class="theme__icon-part"></span>
-                </span>
-            </span>
-        </label>
+    <header class="flex pl-5 py-1 items-center bg-indigo-200">
+        <img src="assets/logo-estodolist.png" class=" w-15 h-15">
+        <h1 class="text-3xl font-semibold pl-3">EsToDoList</h1>
     </header>
-    <main>
+
+    <main class="max-w-5xl mx-auto px-4 py-6 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:max-w-full lg:px-10">
+        <!-- IR PARA TAREFAS -->
+        <section class="w-full lg:hidden">
+            <button
+                class="text-indigo-50 w-52 h-12 p-0.5 rounded-2xl bg-indigo-700 cursor-pointer hover:bg-indigo-800 font-semibold">Ir
+                para lista de tarefas</button>
+        </section>
+
+        <!-- LISTA DE TAREFAS -->
+        <section class="lg:col-span-2">
+            <ul class="space-y-3">
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Trabalho de História</span>
+                            <span class="text-sm text-slate-500">20/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Estudar para a prova de Matemática</span>
+                            <span class="text-sm text-slate-500">22/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row md:justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" checked class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium line-through text-slate-500">Entregar projeto no
+                                GitHub</span>
+                            <span class="text-sm text-slate-500">08/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700 md:px-0py-0">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Trabalho de História</span>
+                            <span class="text-sm text-slate-500">20/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Estudar para a prova de Matemática</span>
+                            <span class="text-sm text-slate-500">22/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Trabalho de História</span>
+                            <span class="text-sm text-slate-500">20/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Estudar para a prova de Matemática</span>
+                            <span class="text-sm text-slate-500">22/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Trabalho de História</span>
+                            <span class="text-sm text-slate-500">20/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Estudar para a prova de Matemática</span>
+                            <span class="text-sm text-slate-500">22/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Estudar para a prova de Matemática</span>
+                            <span class="text-sm text-slate-500">22/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <!-- ADICIONA nos 3 <label>: flex items-start gap-3 -->
+                    <label class="flex items-start gap-3">
+                        <!-- ADICIONA nos 3 checkboxes: mt-1 w-5 h-5 -->
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <!-- ADICIONA: block font-medium no título da tarefa e text-sm text-slate-500 na data (repita nos 3 itens) -->
+                            <span class="block font-medium">Trabalho de História</span>
+                            <span class="text-sm text-slate-500">20/10/2026</span>
+                        </span>
+                    </label>
+                    <!-- ADICIONA nas 3 <div> dos botões: flex gap-2 -->
+                    <div class="flex gap-2">
+                        <!-- ADICIONA nos 6 botões: flex-1 px-4 py-3 rounded-lg. Editar: bg-amber-100. Excluir: bg-red-100 text-red-700 -->
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Estudar para a prova de Matemática</span>
+                            <span class="text-sm text-slate-500">22/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Estudar para a prova de Matemática</span>
+                            <span class="text-sm text-slate-500">22/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Trabalho de História</span>
+                            <span class="text-sm text-slate-500">20/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+
+                <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
+                    <label class="flex items-start gap-3">
+                        <input type="checkbox" class="mt-1 w-5 h-5 accent-emerald-300">
+                        <span>
+                            <span class="block font-medium">Estudar para a prova de Matemática</span>
+                            <span class="text-sm text-slate-500">22/10/2026</span>
+                        </span>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
+                        <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="mt-4 text-sm text-slate-500">2 tarefas pendentes</p>
+        </section>
+
+        <!-- ADICIONAR TAREFA -->
+        <section class="bg-white rounded-xl shadow p-4 space-y-4 max-h-96 lg:sticky top-10">
+            <!-- ADICIONA: flex flex-col gap-3 (campos empilhados) -->
+            <form class="flex flex-col gap-3 md:flex-row lg:flex-col">
+                <!-- ADICIONA nos 2 campos (texto e data): border rounded-lg px-3 py-3 (py-3 dá uma área de toque confortável) -->
+                <input type="text" placeholder="Nova tarefa"
+                    class="border rounded-lg px-3 py-3 md:flex-1 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                <input type="date"
+                    class=" focus:outline-none border rounded-lg px-3 py-3 focus:ring-2 focus:ring-emerald-500">
+                <!-- ADICIONA: bg-indigo-600 text-white rounded-lg px-4 py-3 font-semibold hover:bg-indigo-700 -->
+                <button type="submit"
+                    class="bg-emerald-600 text-white rounded-lg px-4 py-3 font-semibold hover:bg-emerald-800 hover:transition duration-300">Adicionar</button>
+            </form>
+
+            <!-- ADICIONA: w-full border rounded-lg px-3 py-3 -->
+            <input type="search" placeholder="Pesquisar tarefa..."
+                class="w-full border rounded-lg px-3 py-3 hover:ring-2 hover:ring-emerald-500 focus:outline-none">
+
+            <!-- ADICIONA: flex gap-2 overflow-x-auto (no celular a barra de filtros rola de lado sem quebrar a página) -->
+            <div class="flex gap-2 overflow-x-auto">
+                <!-- ADICIONA nos 3 filtros: px-4 py-3 rounded-full whitespace-nowrap. Ativo (Todas): bg-indigo-600 text-white. Demais: bg-slate-200 -->
+                <button class="px-4 py-3 rounded-full bg-emerald-600 text-white whitespace-nowrap">Todas</button>
+                <button class="px-4 py-3 rounded-full bg-slate-200 whitespace-nowrap">Pendentes</button>
+                <button class="px-4 py-3 rounded-full bg-slate-200 whitespace-nowrap">Concluídas</button>
+            </div>
+        </section>
 
     </main>
+
     <footer>
 
     </footer>
