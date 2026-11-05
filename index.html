@@ -15,9 +15,9 @@
         <h1 class="text-3xl font-semibold pl-3">EsToDoList</h1>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 py-6 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:max-w-full lg:px-10">
+    <main class="max-w-5xl mx-auto px-4 py-6 grid grid-cols-1 gap-6 md:  lg:grid-cols-3 lg:max-w-full lg:px-10">
         <!-- IR PARA TAREFAS -->
-        <section class="w-full lg:hidden">
+        <section class="w-full lg:hidden ">
             <button
                 class="text-indigo-50 w-52 h-12 p-0.5 rounded-2xl bg-indigo-700 cursor-pointer hover:bg-indigo-800 font-semibold">Ir
                 para lista de tarefas</button>
@@ -25,25 +25,35 @@
 
         <!-- ADICIONAR TAREFA -->
         <section class="bg-white rounded-xl shadow p-4 space-y-4 max-h-96 lg:sticky top-10">
-            <!-- ADICIONA: flex flex-col gap-3 (campos empilhados) -->
-            <form class="flex flex-col gap-3 md:flex-row lg:flex-col">
-                <!-- ADICIONA nos 2 campos (texto e data): border rounded-lg px-3 py-3 (py-3 dá uma área de toque confortável) -->
-                <input type="text" placeholder="Nova tarefa"
+            <form class="flex flex-col gap-3 lg:flex-col">
+                <!-- Nome da Tarefa -->
+                <input type="text" placeholder="Nome da tarefa"
                     class="border rounded-lg px-3 py-3 md:flex-1 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                <input type="date"
-                    class=" focus:outline-none border rounded-lg px-3 py-3 focus:ring-2 focus:ring-indigo-500">
-                <!-- ADICIONA: bg-indigo-600 text-white rounded-lg px-4 py-3 font-semibold hover:bg-indigo-700 -->
+                <!-- Descrição -->
+                <input type="text" placeholder="Descrição"
+                    class="border rounded-lg px-3 py-3 md:flex-1 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                <!-- Categoria e Data -->
+                <section class="flex justify-between md:justify-start md:gap-50 lg:justify-between lg:gap-0">
+                    <form>
+                        <select class="border p-3 rounded-lg">
+                            <option>id</option>
+                            <option>type</option>
+                            <option>placeholder</option>
+                            <option>name</option>
+                        </select>
+                    </form>
+                    <input type="date"
+                        class=" focus:outline-none border rounded-lg px-1 py-1 focus:ring-2 focus:ring-indigo-500">
+                </section>
+                <!-- Adicionar -->
                 <button type="submit"
-                    class="bg-indigo-600 text-white rounded-lg px-4 py-3 font-semibold hover:bg-indigo-800 hover:transition duration-300">Adicionar</button>
+                    class="bg-indigo-600 text-white w-full rounded-lg px-4 py-3 font-semibold hover:bg-indigo-800 hover:transition duration-300">Adicionar</button>
             </form>
 
-            <!-- ADICIONA: w-full border rounded-lg px-3 py-3 -->
             <input type="search" placeholder="Pesquisar tarefa..."
                 class="w-full border rounded-lg px-3 py-3 hover:ring-2 hover:ring-indigo-500 focus:outline-none">
 
-            <!-- ADICIONA: flex gap-2 overflow-x-auto (no celular a barra de filtros rola de lado sem quebrar a página) -->
             <div class="flex gap-2 overflow-x-auto">
-                <!-- ADICIONA nos 3 filtros: px-4 py-3 rounded-full whitespace-nowrap. Ativo (Todas): bg-indigo-600 text-white. Demais: bg-slate-200 -->
                 <button class="px-4 py-3 rounded-full bg-indigo-600 text-white whitespace-nowrap">Todas</button>
                 <button class="px-4 py-3 rounded-full bg-slate-200 whitespace-nowrap">Pendentes</button>
                 <button class="px-4 py-3 rounded-full bg-slate-200 whitespace-nowrap">Concluídas</button>
@@ -195,19 +205,14 @@
                 </li>
 
                 <li class="bg-white rounded-xl shadow p-4 flex flex-col gap-3 md:flex-row justify-between">
-                    <!-- ADICIONA nos 3 <label>: flex items-start gap-3 -->
                     <label class="flex items-start gap-3">
-                        <!-- ADICIONA nos 3 checkboxes: mt-1 w-5 h-5 -->
                         <input type="checkbox" class="mt-1 w-5 h-5 accent-indigo-300">
                         <span>
-                            <!-- ADICIONA: block font-medium no título da tarefa e text-sm text-slate-500 na data (repita nos 3 itens) -->
                             <span class="block font-medium">Trabalho de História</span>
                             <span class="text-sm text-slate-500">20/10/2026</span>
                         </span>
                     </label>
-                    <!-- ADICIONA nas 3 <div> dos botões: flex gap-2 -->
                     <div class="flex gap-2">
-                        <!-- ADICIONA nos 6 botões: flex-1 px-4 py-3 rounded-lg. Editar: bg-amber-100. Excluir: bg-red-100 text-red-700 -->
                         <button class="flex-1 px-4 py-3 rounded-lg bg-amber-100">Editar</button>
                         <button class="flex-1 px-4 py-3 rounded-lg bg-red-100 text-red-700">Excluir</button>
                     </div>
